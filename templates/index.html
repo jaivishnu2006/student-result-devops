@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Result System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>Student Result Management System</h1>
+    <a href="/add" class="button">Add Student</a>
+
+    <h2>Student Records</h2>
+
+    {% if students %}
+    <table>
+        <tr>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>Total</th>
+            <th>Percentage</th>
+            <th>Result</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.roll_no }}</td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.total }}</td>
+            <td>{{ student.percentage }}%</td>
+            <td>{{ student.result }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No student records available.</p>
+    {% endif %}
+</div>
+</body>
+</html>

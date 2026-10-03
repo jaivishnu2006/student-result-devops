@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    {% if student %}
+    <h1>Student Result</h1>
+    <p><b>Name:</b> {{ student.name }}</p>
+    <p><b>Roll Number:</b> {{ student.roll_no }}</p>
+    <p><b>Mark 1:</b> {{ student.mark1 }}</p>
+    <p><b>Mark 2:</b> {{ student.mark2 }}</p>
+    <p><b>Mark 3:</b> {{ student.mark3 }}</p>
+    <p><b>Total:</b> {{ student.total }}</p>
+    <p><b>Percentage:</b> {{ student.percentage }}%</p>
+    <h2>{{ student.result }}</h2>
+    {% else %}
+    <h2>Student not found</h2>
+    {% endif %}
+    <a href="/">Back to Home</a>
+</div>
+</body>
+</html>
